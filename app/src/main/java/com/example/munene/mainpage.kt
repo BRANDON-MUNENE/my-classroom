@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -30,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -55,7 +57,8 @@ class SecondActivity : ComponentActivity() {
 fun Greeting() {
     Column(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(color = Color.LightGray),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
@@ -76,112 +79,163 @@ fun Greeting() {
             }, content = {
                 Column(
                     modifier = Modifier
-                        .fillMaxSize(),
+                        .fillMaxSize()
+                        .background(color = Color.LightGray),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    LazyColumn {
+                        item {Column (horizontalAlignment = Alignment.CenterHorizontally){
+                            Text(text = "ABOUT", color = Color.Black)
 
-//                    the page contents are placed here
+                            LazyRow{
+                                item {
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally
+                                    ) {
+                                        Image(painter = painterResource(id = R.drawable.exams),
+                                              contentDescription = "abcd",
+                                              contentScale = ContentScale.Crop,
+                                              modifier = Modifier
+                                                  .size(100.dp)
+                                                  .padding(5.dp)
+                                            )
+                                        Text(text = "KNOW YOUR GRADES      ", color = Color.Black)
+                                    }
+                                }
 
-                    LazyRow(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .fillMaxWidth()
+                                item {
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally
+                                    ){
+                                        Image(painter = painterResource(id = R.drawable.assign),
+                                            contentDescription = "abcd",
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier
+                                                .size(100.dp)
+                                                .padding(5.dp)
+                                        )
+                                        Text(text = "       KNOW ASSIGNMENTS")
+                                    }
+                                }
+                                item {
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally
+                                    ){
+                                        Image(painter = painterResource(id = R.drawable.events),
+                                            contentDescription = "abcd",
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier
+                                                .size(100.dp)
+                                                .padding(5.dp)
+                                        )
+                                        Text(text = "       KNOW UPCOMING EVENTS")
+                                    }
+                                }
 
-                    ) {
+
+                            }
 
 
 
-
-
-
-
+                        }
                     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//                    the page contents are placed here
 
 
                 }
 
-            })
 
 
 
 
 
-    }
 
 
 
 
-}
+
+
+
+            }
+
+
+
+
+
+
+                })
+    }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
