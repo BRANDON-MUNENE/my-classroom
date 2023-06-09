@@ -54,17 +54,17 @@ class SecondActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview()
 @Composable
-fun Greeting() {
+fun Greeting() {//fungreeting
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.LightGray),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ){//maincolumnsquare
 
 
-        Scaffold(
+        Scaffold(//scaffold
             topBar = {
                 TopAppBar(
                     title = {
@@ -76,64 +76,97 @@ fun Greeting() {
                         }
                     },
                 )
-            }, content = {
+            },
+
+            content = {//content
+                Box(modifier = Modifier) {
+                    Image(
+                        painter = painterResource(R.drawable.kinder2),
+                        contentDescription = null, // Provide a description if needed
+                        modifier = Modifier
+                    )
+                }
+
+
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(color = Color.LightGray),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    LazyColumn {
+                ) {//othercolumnsquare
+
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.kinder2),
+                        contentDescription = "about",
+                        modifier = Modifier
+                            .size(300.dp)
+                    )
+
+                }
+
+                    Spacer(modifier = Modifier
+                        .height(20.dp))
+
+
+                    LazyColumn {//mainlazycolumn
+
                         item {Column (horizontalAlignment = Alignment.CenterHorizontally){
                             Text(text = "ABOUT", color = Color.Black)
 
-                            LazyRow{
+                            LazyRow {
                                 item {
                                     Column(
                                         horizontalAlignment = Alignment.CenterHorizontally
                                     ) {
-                                        Image(painter = painterResource(id = R.drawable.exams),
-                                              contentDescription = "abcd",
-                                              contentScale = ContentScale.Crop,
-                                              modifier = Modifier
-                                                  .size(100.dp)
-                                                  .padding(5.dp)
-                                            )
-                                        Text(text = "KNOW YOUR GRADES      ", color = Color.Black)
-                                    }
-                                }
-
-                                item {
-                                    Column(
-                                        horizontalAlignment = Alignment.CenterHorizontally
-                                    ){
-                                        Image(painter = painterResource(id = R.drawable.assign),
+                                        Image(
+                                            painter = painterResource(id = R.drawable.exams),
                                             contentDescription = "abcd",
                                             contentScale = ContentScale.Crop,
                                             modifier = Modifier
                                                 .size(100.dp)
                                                 .padding(5.dp)
                                         )
-                                        Text(text = "       KNOW ASSIGNMENTS")
+                                        Text(text = "KNOW YOUR GRADES", color = Color.Black)
                                     }
                                 }
+                            }
+                            LazyRow {
                                 item {
                                     Column(
                                         horizontalAlignment = Alignment.CenterHorizontally
-                                    ){
-                                        Image(painter = painterResource(id = R.drawable.events),
+                                    ) {
+                                        Image(
+                                            painter = painterResource(id = R.drawable.assign),
                                             contentDescription = "abcd",
                                             contentScale = ContentScale.Crop,
                                             modifier = Modifier
                                                 .size(100.dp)
                                                 .padding(5.dp)
                                         )
-                                        Text(text = "       KNOW UPCOMING EVENTS")
+                                        Text(text = "KNOW ASSIGNMENTS")
                                     }
                                 }
+                            }
+                            LazyRow{
+                                item {
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally
+                                    ){
+                                        Image(painter = painterResource(id = R.drawable.eve),
+                                            contentDescription = "abcd",
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier
+                                                .size(100.dp)
+                                                .padding(5.dp)
 
-
+                                        )
+                                        Text(text = "KNOW UPCOMING EVENTS")
+                                    }
+                                }
                             }
 
 
@@ -145,7 +178,7 @@ fun Greeting() {
 //                    the page contents are placed here
 
 
-                }
+                }//mainlazycolumn
 
 
 
@@ -159,15 +192,12 @@ fun Greeting() {
 
 
 
-            }
 
-
-
-
-
-
-                })
-    }}
+                }//othercolumnsquare
+            }//content
+        )//scaffold
+    }//maincolumnsquare
+}//fungreeting
 
 
 
